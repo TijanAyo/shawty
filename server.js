@@ -58,17 +58,3 @@ app.get('/:shawtyid', async (req, res)=>{
     res.redirect(shawtyid.full_url);
 
 });
-
-/* app.get('/:shorturl', (req, res)=>{
-    const shawtyid = req.params.shorturl;
-
-    shorturl.findOne({short_url:shawtyid})
-    .then(()=>{
-        if(shawtyid == null) return res.sendStatus(404);
-
-        res.redirect(shorturl.full_url);
-    })
-    .catch((err)=>{
-        console.log(err);
-    })
-}) */
