@@ -3,6 +3,8 @@ const res = require('express/lib/response');
 const mongoose = require('mongoose');
 const shorturl = require('./models/shorturl');
 
+require('dotenv').config()
+
 const favicon = require('serve-favicon');
 const path = require('path');
 
@@ -17,8 +19,11 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // static files path
 app.use(express.static(__dirname+'/public'));
 
+let pass = process.env.DB_PASS;
+let name = process.env.DB_NAME
+
 // connecting to MongoDB
-const dbURI = 'mongodb+srv://Tijan:Tijan123@getting-started-with-no.sdrkl.mongodb.net/Shawty-url-shortner?retryWrites=true&w=majority';
+const dbURI = `mongodb+srv://Tijan:${pass}@getting-started-with-no.sdrkl.mongodb.net/${name}?retryWrites=true&w=majority`;
 mongoose.connect(dbURI)
     .then((result)=>{
         app.listen(3000);
