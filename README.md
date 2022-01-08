@@ -28,6 +28,7 @@ but then after lots of googling and stackoverflow, i found that linking favicon
 can only be possible if i install a package "serve-favicon"... quite fun figuring that out
 
 And some-other boring stuff 😅😅 
+```
 
 ## Installation
 
