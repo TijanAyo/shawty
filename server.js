@@ -3,12 +3,19 @@ const res = require('express/lib/response');
 const mongoose = require('mongoose');
 const shorturl = require('./models/shorturl');
 
+const favicon = require('serve-favicon');
+const path = require('path');
+
 // express
 const app = express();
 
 //view engine
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended:true }));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+// static files path
+app.use(express.static(__dirname+'/public'));
 
 // connecting to MongoDB
 const dbURI = 'mongodb+srv://Tijan:Tijan123@getting-started-with-no.sdrkl.mongodb.net/Shawty-url-shortner?retryWrites=true&w=majority';
