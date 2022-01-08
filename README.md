@@ -1,4 +1,4 @@
-# Shawty Url Shortner 😅
+# Shawty Url Shortner
 
 **shawty.ly** is a free tool to shorten a URL or reduce a link
 Use shawty to create a shortened link making it easy to remember
