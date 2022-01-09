@@ -36,7 +36,7 @@ mongoose.connect(dbURI)
 app.get('/', (req, res) =>{
     shorturl.find()
         .then((result)=>{
-            res.render('index', {title: "Short URL's | Shawty",  shorturl:result.id})
+            res.render('index', {title: "Short URL's | Shawty",  shorturl:result})
         })
         .catch((err)=>{
             console.log(err);
