@@ -1,3 +1,7 @@
+
+![Logo](https://cdn-icons-png.flaticon.com/512/1017/1017466.png)
+
+
 # Shawty Url Shortner
 
 **shawty.ly** is a free tool to shorten a URL or reduce a link
