@@ -26,7 +26,7 @@ let name = process.env.DB_NAME
 const dbURI = `mongodb+srv://Tijan:${pass}@getting-started-with-no.sdrkl.mongodb.net/${name}?retryWrites=true&w=majority`;
 mongoose.connect(dbURI)
     .then((result)=>{
-        app.listen(3000);
+        app.listen(process.env.PORT || 3000);
     })
     .catch((err)=>{
         console.log(err);
