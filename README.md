@@ -41,3 +41,7 @@ git clone https://github.com/TijanAyo/shawty.git
 
 npm install
 // install all packages that comes with the project
+```
+
+## Preview
+💫 http://shawtty.herokuapp.com 💫
