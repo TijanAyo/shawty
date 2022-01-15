@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="image-container">
-                            <form action='/shawtyURLs' method='POST'>
+                            <form action='/createshawtyurls' method='POST'>
                                 <!-- <label for="url" class="form-label">URL</label> -->
                                 <input class="form-control" placeholder= "Shorten your link" type="url" name="fullUrl" id="full-url">
                     
@@ -45,22 +45,24 @@
                                 </div>
                             </form>
                             <br />
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">URL</th>
-                                        <th scope="col"> Shawty URL</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <% for (const shawty of shorturl){ %>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
                                         <tr>
-                                            <td scope="row"><a href="<%=shawty.full_url %>"> <%=shawty.full_url %></a></td>
-                                            <td scope="row"><a href="<%=shawty.short_url %>"> https://shaw.ty/<%=shawty.short_url %></a></td>
+                                            <th scope="col">URL</th>
+                                            <th scope="col"> Shawty URL</th>
                                         </tr>
-                                    <% } %>
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        <% for (const shawty of shorturl){ %>
+                                            <tr>
+                                                <td scope="row"><a href="<%=shawty.full_url %>"> <%=shawty.full_url %></a></td>
+                                                <td scope="row"><a href="<%=shawty.short_url %>"> https://shaw.ty/<%=shawty.short_url %></a></td>
+                                            </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->

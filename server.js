@@ -44,8 +44,7 @@ app.get('/', (req, res) =>{
 });
 
 
-app.post('/shawtyURLs', (req, res)=>{
-    // const shawtyurl = new shorturl(req.body.fullUrl);
+app.post('/createshawtyurls', (req, res)=>{
     shorturl.create({ full_url: req.body.fullUrl })
         .then(()=>{
             res.redirect('/');
