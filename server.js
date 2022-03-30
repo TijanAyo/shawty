@@ -18,42 +18,9 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(__dirname+'/public'));
 
 
-
-
-/* app.get('/', (req, res) =>{
-    shorturl.find()
-        .then((result)=>{
-            res.render('index', {title: "Short URL's | Shawty",  shorturl:result})
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
-}); */
-
-
-/* app.post('/createshawtyurls', (req, res)=>{
-    shorturl.create({ full_url: req.body.fullUrl })
-        .then(()=>{
-            res.redirect('/');
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
-
-}); */
-
-
-/* app.get('/:shawtyid', async (req, res)=>{
-    const shawtyid = await shorturl.findOne({ short_url: req.params.shawtyid})
-    if(shawtyid == null) return res.sendStatus(404)
-
-    res.redirect(shawtyid.full_url);
-
-}); */
-
 app.get('/', async (req, res)=>{
     try{
-        const short_url = await ShortUrl.find().sort("_id")
+        const short_url = await ShortUrl.find().sort("-createdAt")
         return res.status(200).render('index', {title: "Short URL's | Shawty", short_url:short_url})
     }
     catch(err){
