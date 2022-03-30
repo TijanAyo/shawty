@@ -3,7 +3,7 @@ const shortid = require('shortid');
 
 const Schema = mongoose.Schema;
 
-const ShortUrlSchema = new Schema({
+const ShortUrl = new Schema({
     full_url: {
         type: String,
         required: true
@@ -13,7 +13,8 @@ const ShortUrlSchema = new Schema({
         required: true,
         default:  shortid.generate
     }
-});
+},
+    {timestamps: true}
+);
 
-const shorturl = mongoose.model('shawty', ShortUrlSchema);
-module.exports = shorturl;
+module.exports = mongoose.model('Short', ShortUrl);

@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="image-container">
-                            <form action='/createshawtyurls' method='POST'>
+                            <form action='/shorten_url' method='POST'>
                                 <!-- <label for="url" class="form-label">URL</label> -->
                                 <input class="form-control" placeholder= "Shorten your link" type="url" name="fullUrl" id="full-url">
                     
@@ -54,7 +54,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% for (const shawty of shorturl){ %>
+                                        <% for (const shawty of short_url){ %>
                                             <tr>
                                                 <td scope="row"><a href="<%=shawty.full_url %>"> <%=shawty.full_url %></a></td>
                                                 <td scope="row"><a href="<%=shawty.short_url %>"> https://shaw.ty/<%=shawty.short_url %></a></td>
