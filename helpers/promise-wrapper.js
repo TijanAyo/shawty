@@ -6,7 +6,6 @@ const PromiseWrapper = async (promise) => {
   } catch (err) {
     error = err;
   }
-
   return [result, error];
 };
 
