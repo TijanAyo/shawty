@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <!-- Head tag -->
-    <%- include('./partials/head.ejs') %>
-    <!-- end of head tag -->
+  <!-- Head tag -->
+  <%- include('./partials/head.ejs') %>
+  <!-- end of head tag -->
 
-    <body data-spy="scroll" data-target=".fixed-top" >
-
-        <!-- Preloader 
+  <body data-spy="scroll" data-target=".fixed-top">
+    <!-- Preloader 
 
         <div class="spinner-wrapper">
             <div class="spinner">
@@ -17,152 +16,208 @@
         </div>
         < end of preloader -->
 
-        <!-- Navbar -->
-        <%- include('./partials/nav.ejs') %>
-        <!-- end Navbar -->
+    <!-- Navbar -->
+    <%- include('./partials/nav.ejs') %>
+    <!-- end Navbar -->
 
-        <!-- Header -->
-        <header class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="text-container">
-                            <h1>Simple and fast URL shortener!</h1>
-                            <p class="p-large p-heading">Shawty allows to reduce long links from Instagram, Facebook, YouTube, Twitter, Linked In and top sites on the Internet, just paste the long URL and click the Shorten button. </p>
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="image-container">
-                            <form action='/shorten_url' method='POST'>
-                                <!-- <label for="url" class="form-label">URL</label> -->
-                                <input class="form-control" placeholder= "Shorten your link" type="url" name="fullUrl" id="full-url">
-                    
-                                <br />
-                                <div class="d-grid gap-2 col-6 mx-auto">
-                                    <button class="btn btn-primary" type="submit">Shorten</button>
-                                </div>
-                            </form>
-                            <br />
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">URL</th>
-                                            <th scope="col"> Shawty URL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <% for (const shawty of short_url){ %>
-                                            <tr>
-                                                <td scope="row"><a href="<%=shawty.full_url %>"> <%=shawty.full_url %></a></td>
-                                                <td scope="row"><a href="<%=shawty.short_url %>"> https://shaw.ty/<%=shawty.short_url %></a></td>
-                                            </tr>
-                                        <% } %>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-            <div class="deco-white-circle-1">
-                <img src="images/decorative-white-circle.svg" alt="alternative">
-            </div> <!-- end of deco-white-circle-1 -->
-            <div class="deco-white-circle-2">
-                <img src="images/decorative-white-circle.svg" alt="alternative">
-            </div> <!-- end of deco-white-circle-2 -->
-            <div class="deco-blue-circle">
-                <img src="images/decorative-blue-circle.svg" alt="alternative">
-            </div> <!-- end of deco-blue-circle -->
-            <div class="deco-yellow-circle">
-                <img src="images/decorative-yellow-circle.svg" alt="alternative">
-            </div> <!-- end of deco-yellow-circle -->
-            <div class="deco-green-diamond">
-                <img src="images/decorative-green-diamond.svg" alt="alternative">
-            </div> <!-- end of deco-yellow-circle -->
-        </header> <!-- end of header -->
-        <!-- end of header -->
-        
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="text-container">
+              <h1>Simple and fast URL shortener!</h1>
+              <p class="p-large p-heading">
+                Shawty allows to reduce long links from Instagram, Facebook,
+                YouTube, Twitter, Linked In and top sites on the Internet, just
+                paste the long URL and click the Shorten button.
+              </p>
+            </div>
+            <!-- end of text-container -->
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- end of row -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="image-container">
+              <form action="/shorten_url" method="POST">
+                <!-- <label for="url" class="form-label">URL</label> -->
+                <input
+                  class="form-control"
+                  placeholder="Shorten your link"
+                  type="url"
+                  name="fullUrl"
+                  id="full-url"
+                  required
+                />
 
-        <!-- Small Features -->
-        <div class="cards-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        
-                        <!-- Card -->
-                        <div class="card">
-                            <div class="card-image">
-                                <i class="fas fa-thumbs-up"></i>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Easy</h5>
-                            </div>
-                        </div>
-                        <!-- end of card -->
+                <br />
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn btn-primary" type="submit">Shorten</button>
+                </div>
+              </form>
+              <br />
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">URL</th>
+                      <th scope="col">Shawty URL</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% for (const shawty of short_url){ %>
+                    <tr>
+                      <td scope="row">
+                        <a href="<%=shawty.full_url %>">
+                          <%=shawty.full_url %></a
+                        >
+                      </td>
+                      <td scope="row">
+                        <a href="<%=shawty.short_url %>">
+                          https://shaw.ty/<%=shawty.short_url %></a
+                        >
+                      </td>
+                    </tr>
+                    <% } %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- end of text-container -->
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- end of row -->
+      </div>
+      <!-- end of container -->
+      <div class="deco-white-circle-1">
+        <img src="images/decorative-white-circle.svg" alt="alternative" />
+      </div>
+      <!-- end of deco-white-circle-1 -->
+      <div class="deco-white-circle-2">
+        <img src="images/decorative-white-circle.svg" alt="alternative" />
+      </div>
+      <!-- end of deco-white-circle-2 -->
+      <div class="deco-blue-circle">
+        <img src="images/decorative-blue-circle.svg" alt="alternative" />
+      </div>
+      <!-- end of deco-blue-circle -->
+      <div class="deco-yellow-circle">
+        <img src="images/decorative-yellow-circle.svg" alt="alternative" />
+      </div>
+      <!-- end of deco-yellow-circle -->
+      <div class="deco-green-diamond">
+        <img src="images/decorative-green-diamond.svg" alt="alternative" />
+      </div>
+      <!-- end of deco-yellow-circle -->
+    </header>
+    <!-- end of header -->
+    <!-- end of header -->
 
-                        <!-- Card -->
-                        <div class="card">
-                            <div class="card-image green">
-                                <i class="fas fa-link"></i>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Shortened</h5>
-                            </div>
-                        </div>
-                        <!-- end of card -->
+    <!-- Small Features -->
+    <div class="cards-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <!-- Card -->
+            <div class="card">
+              <div class="card-image">
+                <i class="fas fa-thumbs-up"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Easy</h5>
+              </div>
+            </div>
+            <!-- end of card -->
 
-                        <!-- Card -->
-                        <div class="card">
-                            <div class="card-image red">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Reliable</h5>
-                            </div>
-                        </div>
-                        <!-- end of card -->
+            <!-- Card -->
+            <div class="card">
+              <div class="card-image green">
+                <i class="fas fa-link"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Shortened</h5>
+              </div>
+            </div>
+            <!-- end of card -->
 
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of cards-1 -->
-        <!-- end of small features -->
+            <!-- Card -->
+            <div class="card">
+              <div class="card-image red">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Reliable</h5>
+              </div>
+            </div>
+            <!-- end of card -->
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- end of row -->
+      </div>
+      <!-- end of container -->
+    </div>
+    <!-- end of cards-1 -->
+    <!-- end of small features -->
 
-        <!-- Description 1 -->
-        <div id="description" class="basic-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="image-container">
-                            <img class="img-fluid" src="images/airplane.gif" alt="alternative">
-                        </div> <!-- end of image-container -->
-                    </div> <!-- end of col -->
-                    <div class="col-lg-6">
-                        <div class="text-container">
-                            <h2>Shorten and Share</h2>
-                            <p>Your shortened URLs can be used in publications, documents, advertisements, blogs, forums, instant messages, and other locations.</p>
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of basic-1 -->
-        <!-- end of description 1 -->
+    <!-- Description 1 -->
+    <div id="description" class="basic-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="image-container">
+              <img
+                class="img-fluid"
+                src="images/airplane.gif"
+                alt="alternative"
+              />
+            </div>
+            <!-- end of image-container -->
+          </div>
+          <!-- end of col -->
+          <div class="col-lg-6">
+            <div class="text-container">
+              <h2>Shorten and Share</h2>
+              <p>
+                Your shortened URLs can be used in publications, documents,
+                advertisements, blogs, forums, instant messages, and other
+                locations.
+              </p>
+            </div>
+            <!-- end of text-container -->
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- end of row -->
+      </div>
+      <!-- end of container -->
+    </div>
+    <!-- end of basic-1 -->
+    <!-- end of description 1 -->
 
-        <!-- Copyright -->
-        <%- include('./partials/copyright.ejs') %>
-        <!-- end of copyright -->
-        
-        <!-- Scripts -->
-        <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-        <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-        <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-        <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-        <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-        <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-        <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-        <script src="js/scripts.js"></script> <!-- Custom scripts -->
-    </body>
+    <!-- Copyright -->
+    <%- include('./partials/copyright.ejs') %>
+    <!-- end of copyright -->
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script>
+    <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/swiper.min.js"></script>
+    <!-- Swiper for image and text sliders -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- Magnific Popup for lightboxes -->
+    <script src="js/validator.min.js"></script>
+    <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="js/scripts.js"></script>
+    <!-- Custom scripts -->
+  </body>
 </html>
